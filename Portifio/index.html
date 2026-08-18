@@ -180,6 +180,17 @@
             </p>
           </div>
         </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"><i class="fa-solid fa-computer"></i></div>
+          <div class="timeline-content">
+            <span class="date"> 2024 – 2025 </span>
+            <h3>Computer Training Certification</h3>
+            <p>
+              Successfully completed all requirements of the Computer Training Courses.
+
+            </p>
+          </div>
+        </div>
         <!-- HIGH SCHOOL -->
         <div class="timeline-item">
           <div class="timeline-dot"><i class="fa-solid fa-school"></i></div>
@@ -369,8 +380,10 @@
     </footer>
     <!-- ===================================================== JAVASCRIPT ===================================================== -->
     <script>
+      // ============== MOBILE MENU TOGGLE ==============
       const menuBtn = document.getElementById("menuBtn");
       const navbar = document.getElementById("navbar");
+      
       menuBtn.addEventListener("click", function () {
         navbar.classList.toggle("show");
         const icon = menuBtn.querySelector("i");
@@ -381,7 +394,148 @@
           icon.classList.remove("fa-xmark");
           icon.classList.add("fa-bars");
         }
-      }); // Close mobile menu when clicking a link document.querySelectorAll('#navbar a').forEach(link => { link.addEventListener('click', function () { navbar.classList.remove('show'); const icon = menuBtn.querySelector('i'); icon.classList.remove('fa-xmark'); icon.classList.add('fa-bars'); }); }); // Active navigation link const sections = document.querySelectorAll('section[id]'); const navLinks = document.querySelectorAll('#navbar a'); window.addEventListener('scroll', function () { let current = ''; sections.forEach(section => { const sectionTop = section.offsetTop - 150; const sectionHeight = section.offsetHeight; if ( window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight ) { current = section.getAttribute('id'); } }); navLinks.forEach(link => { link.classList.remove('active'); if ( link.getAttribute('href') === '#' + current ) { link.classList.add('active'); } }); }); // Typing animation const typingElement = document.querySelector('.typing'); const words = [ ' | Software Engineering', ' | Web Development', ' | Laravel Developer', ' | C# Developer', ' | React Developer' ]; let wordIndex = 0; let charIndex = 0; let deleting = false; function typeEffect() { const currentWord = words[wordIndex]; if (!deleting) { typingElement.textContent = currentWord.substring(0, charIndex + 1); charIndex++; if (charIndex === currentWord.length) { deleting = true; setTimeout(typeEffect, 1500); return; } } else { typingElement.textContent = currentWord.substring(0, charIndex - 1); charIndex--; if (charIndex === 0) { deleting = false; wordIndex++; if (wordIndex >= words.length) { wordIndex = 0; } } } setTimeout( typeEffect, deleting ? 50 : 100 ); } typeEffect(); // Back to top const backTop = document.querySelector('.back-top'); window.addEventListener('scroll', function () { if (window.scrollY > 500) { backTop.classList.add('show'); } else { backTop.classList.remove('show'); } });
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll('#navbar a').forEach(link => {
+        link.addEventListener('click', function () {
+          navbar.classList.remove('show');
+          const icon = menuBtn.querySelector('i');
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        });
+      });
+
+      // ============== ACTIVE NAVIGATION LINK ==============
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('#navbar a');
+      
+      window.addEventListener('scroll', function () {
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 150;
+          const sectionHeight = section.offsetHeight;
+          if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+            current = section.getAttribute('id');
+          }
+        });
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+          }
+        });
+      });
+
+      // ============== TYPING ANIMATION ==============
+      const typingElement = document.querySelector('.typing');
+      const words = [
+        ' | Software Engineering',
+        ' | Web Development',
+        ' | Laravel Developer',
+        ' | C# Developer',
+        ' | React Developer'
+      ];
+      let wordIndex = 0;
+      let charIndex = 0;
+      let deleting = false;
+      
+      function typeEffect() {
+        const currentWord = words[wordIndex];
+        if (!deleting) {
+          typingElement.textContent = currentWord.substring(0, charIndex + 1);
+          charIndex++;
+          if (charIndex === currentWord.length) {
+            deleting = true;
+            setTimeout(typeEffect, 1500);
+            return;
+          }
+        } else {
+          typingElement.textContent = currentWord.substring(0, charIndex - 1);
+          charIndex--;
+          if (charIndex === 0) {
+            deleting = false;
+            wordIndex++;
+            if (wordIndex >= words.length) {
+              wordIndex = 0;
+            }
+          }
+        }
+        setTimeout(typeEffect, deleting ? 50 : 100);
+      }
+      typeEffect();
+
+      // ============== BACK TO TOP ==============
+      const backTop = document.querySelector('.back-top');
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 500) {
+          backTop.classList.add('show');
+        } else {
+          backTop.classList.remove('show');
+        }
+      });
+
+      // ============== SCROLL ANIMATIONS ON MOBILE ==============
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-up');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Observe skill cards
+      document.querySelectorAll('.skills-card').forEach((card, index) => {
+        card.style.animationDelay = (index * 0.1) + 's';
+        observer.observe(card);
+      });
+
+      // Observe info boxes
+      document.querySelectorAll('.info-box').forEach((box, index) => {
+        box.style.animationDelay = (index * 0.08) + 's';
+        observer.observe(box);
+      });
+
+      // Observe timeline items
+      document.querySelectorAll('.timeline-item').forEach((item, index) => {
+        item.style.animationDelay = (index * 0.1) + 's';
+        observer.observe(item);
+      });
+
+      // Observe language cards
+      document.querySelectorAll('.language-card').forEach((card, index) => {
+        card.style.animationDelay = (index * 0.1) + 's';
+        observer.observe(card);
+      });
+
+      // ============== TOUCH FEEDBACK FOR MOBILE ==============
+      document.querySelectorAll('.btn, .social a, .skills-card, .info-box, .language-card').forEach(element => {
+        element.addEventListener('touchstart', function() {
+          this.style.transform = 'scale(0.98)';
+          this.style.transition = 'transform 0.1s ease-out';
+        });
+        element.addEventListener('touchend', function() {
+          this.style.transform = '';
+        });
+      });
+
+      // ============== PERFORMANCE: Reduce animations on low-end devices ==============
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.style.setProperty('--transition', '0.01s ease');
+      }
+
+      // ============== LAZY ANIMATION INIT ==============
+      window.addEventListener('load', function() {
+        // Add animation class to hero section
+        document.querySelector('.hero-content')?.classList.add('animate-fade-up');
+        document.querySelector('.hero-image')?.classList.add('animate-fade-up');
+      });
     </script>
   </body>
 </html>
