@@ -2486,6 +2486,18 @@ footer p {
 
 /* A more spacious, touch-friendly motion profile for phones and tablets. */
 @media (max-width: 750px) {
+    /* Applied by JavaScript only on mobile devices that allow motion. */
+    .js-scroll-reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        animation: none !important;
+        will-change: transform, opacity;
+    }
+
+    .js-scroll-reveal.is-revealed {
+        animation: fadeInUp .55s cubic-bezier(.2, .8, .2, 1) var(--reveal-delay, 0ms) both !important;
+    }
+
     .hero-content,
     .hero-image {
         animation-duration: .75s;
