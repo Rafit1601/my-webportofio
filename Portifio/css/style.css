@@ -46,7 +46,7 @@ body {
     background:
         radial-gradient(
             circle at 10% 20%,
-            rgba(0,171,240,.12),
+            rgba(0,171,240,.12),    
             transparent 30%
         ),
 
@@ -486,6 +486,10 @@ nav a.active::after {
 .typing {
 
     color: var(--primary);
+
+    display: inline-block;
+
+    min-width: 18ch;
 
     text-shadow:
         0 0 15px rgba(0,171,240,.6);
@@ -2432,5 +2436,98 @@ footer p {
         .hero {
             animation: none;
         }
+    }
+}
+
+/* =========================================================
+   POLISHED RESPONSIVE MOTION
+========================================================= */
+
+/* Scroll-in content is animated only after it is visible. */
+.skills-card,
+.info-box,
+.timeline-item,
+.language-card {
+    will-change: transform, opacity;
+}
+
+.section-title {
+    transition: transform .35s ease, opacity .35s ease;
+}
+
+/* Give desktop interactions a subtle, consistent lift. */
+@media (hover: hover) and (pointer: fine) {
+    .info-box,
+    .contact-item,
+    .floating-card {
+        transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    }
+
+    .info-box:hover,
+    .contact-item:hover {
+        transform: translateX(6px);
+    }
+
+    .floating-card:hover {
+        transform: translateY(-7px) scale(1.03);
+        border-color: rgba(0, 247, 255, .5);
+        box-shadow: 0 18px 40px rgba(0, 171, 240, .2);
+    }
+
+    .hero-image > img {
+        transition: transform .45s ease, box-shadow .45s ease;
+    }
+
+    .hero-image:hover > img {
+        transform: translateY(-10px) scale(1.025);
+        box-shadow: 0 0 38px rgba(0,171,240,.65), 0 0 100px rgba(0,171,240,.28);
+    }
+}
+
+/* A more spacious, touch-friendly motion profile for phones and tablets. */
+@media (max-width: 750px) {
+    .hero-content,
+    .hero-image {
+        animation-duration: .75s;
+    }
+
+    .hero-image > img {
+        animation-duration: 6s;
+    }
+
+    .typing {
+        display: block;
+        min-height: 1.35em;
+        min-width: 0;
+        margin-top: 5px;
+    }
+
+    .skills-card,
+    .info-box,
+    .language-card,
+    .timeline-content,
+    .btn,
+    .social a {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .skills-card:active,
+    .info-box:active,
+    .language-card:active {
+        transform: scale(.985);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .image-glow,
+    .hero-image > img,
+    .floating-card,
+    .available span,
+    .hero h1 {
+        animation: none !important;
     }
 }
