@@ -25,6 +25,151 @@
 }
 
 
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+:root[data-theme="light"] {
+
+    --bg: #418fcb;
+    --bg2: #e9f1f7;
+
+    --card: rgba(6,19,31,.045);
+
+    --primary: #0088cc;
+    --cyan: #0bb7c4;
+
+    --white: #0c1f2e;
+    --muted: #55697a;
+
+    --border: rgba(6,19,31,.12);
+
+    --shadow:
+        0 25px 70px rgba(6,19,31,.12);
+}
+
+
+[data-theme="light"] body {
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(0,136,204,.10),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(11,183,196,.08),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #cddeec,
+            #eaf2f7,
+            #d1dae0,
+            #bad3e7
+        );
+}
+
+
+[data-theme="light"] ::-webkit-scrollbar-track {
+    background: #c1dbec;
+}
+
+
+[data-theme="light"] header {
+
+    background: rgba(174, 210, 221, 0.65);
+
+    border-bottom: 1px solid rgba(6,19,31,.08);
+}
+
+
+[data-theme="light"] .logo {
+
+    color: #0c1f2e;
+}
+
+
+[data-theme="light"] nav a {
+
+    color: #24425c;
+}
+
+
+[data-theme="light"] .menu-btn {
+
+    color: var(--primary);
+}
+
+
+[data-theme="light"] .theme-toggle {
+
+    color: #d98a00;
+}
+
+
+[data-theme="light"] .hero h1 {
+
+    background:
+        linear-gradient(
+            90deg,
+            #3db913,
+            #0088cc,
+            #f6031f
+        );
+
+    background-size: 200%;
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+[data-theme="light"] .image-glow {
+
+    background: rgba(217, 138, 0, .12);
+}
+
+
+[data-theme="light"] .timeline-dot {
+
+    background: #ffffff;
+}
+
+
+[data-theme="light"] .contact-form {
+
+    background: rgba(255,255,255,.7);
+}
+
+
+[data-theme="light"] .contact-form input,
+[data-theme="light"] .contact-form textarea {
+
+    background: rgba(6,19,31,.03);
+
+    border: 1px solid rgba(6,19,31,.1);
+
+    color: #0c1f2e;
+}
+
+
+[data-theme="light"] footer {
+
+    background: rgba(255,255,255,.5);
+}
+
+
+[data-theme="light"] nav.show {
+
+    background: rgba(244,248,251,.97);
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -177,7 +322,7 @@ header {
 
     text-decoration: none;
 
-    font-size: 30px;
+    font-size: 28px;
 
     font-weight: 800;
 
@@ -284,6 +429,60 @@ nav a.active::after {
 
 
 /* =========================================================
+   THEME TOGGLE
+========================================================= */
+
+.theme-toggle {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255,.05);
+
+    color: var(--primary);
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+
+    color: #06131f;
+
+    background: var(--primary);
+
+    border-color: var(--primary);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(0,171,240,.35);
+
+    outline: none;
+}
+
+
+.theme-toggle:active {
+
+    transform: translateY(-1px) scale(.94);
+}
+
+
+/* =========================================================
    LANGUAGE TOGGLE
 ========================================================= */
 
@@ -378,7 +577,7 @@ nav a.active::after {
 
 .hero {
 
-    min-height: 90vh;
+    min-height: 100vh;
 
     padding:
         140px 9%
@@ -514,7 +713,7 @@ nav a.active::after {
             90deg,
             white,  
             #00abf0,
-            #ee0303
+            #ee0332
         );
 
     background-size: 200%;
@@ -798,8 +997,8 @@ nav a.active::after {
 
     position: absolute;
 
-    width: 350px;
-    height: 380px;
+    width: 360px;
+    height: 300px;
 
     border-radius: 50%;
 
@@ -831,8 +1030,8 @@ nav a.active::after {
 
     position: relative;
 
-    width: 380px;
-    height: 440px;
+    width: 340px;
+    height: 380px;
 
     object-fit: cover;
 
@@ -1024,7 +1223,7 @@ nav a.active::after {
 
     width: 100%;
 
-    max-width: 300px;
+    max-width: 380px;
 
     border-radius: 25px;
 
@@ -1482,7 +1681,7 @@ nav a.active::after {
     border-radius: 50px;
 
     color:
-        #d7e3ea;
+        #7e88d0;
 
     background:
         rgba(255,255,255,.04);
@@ -2337,6 +2536,14 @@ footer p {
     .header-actions {
 
         gap: 10px;
+    }
+
+    .theme-toggle {
+
+        width: 36px;
+        height: 36px;
+
+        font-size: 14px;
     }
 
     .lang-toggle {

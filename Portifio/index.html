@@ -32,6 +32,10 @@
         <a href="#contact" data-en="Contact" data-km="ទំនាក់ទំនង">Contact</a>
       </nav>
       <div class="header-actions">
+        <!-- THEME TOGGLE -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark / light theme" type="button">
+          <i class="fa-solid fa-moon"></i>
+        </button>
         <!-- LANGUAGE TOGGLE -->
         <button class="lang-toggle" id="langToggle" aria-label="Switch language" type="button">
           <i class="fa-solid fa-language"></i>
@@ -456,6 +460,30 @@
           }
         });
       });
+
+      // ============== THEME TOGGLE ==============
+      const themeToggle = document.getElementById('themeToggle');
+      const themeToggleIcon = themeToggle.querySelector('i');
+
+      function applyTheme(theme) {
+        if (theme === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+          themeToggleIcon.classList.remove('fa-moon');
+          themeToggleIcon.classList.add('fa-sun');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+          themeToggleIcon.classList.remove('fa-sun');
+          themeToggleIcon.classList.add('fa-moon');
+        }
+      }
+
+      themeToggle.addEventListener('click', function () {
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+        applyTheme(isLight ? 'dark' : 'light');
+      });
+
+      // Default theme is dark (site's original look)
+      applyTheme('dark');
 
       // ============== LANGUAGE TOGGLE ==============
       const langToggle = document.getElementById('langToggle');
