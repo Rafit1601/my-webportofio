@@ -1,10 +1,17 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" id="htmlRoot">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="VUN DARA - IT Student Portfolio" />
     <title>VUN DARA | webPersonal</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Siemreap&display=swap"
+      rel="stylesheet"
+    />
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <!-- Font Awesome -->
@@ -18,31 +25,42 @@
     <header>
       <a href="#home" class="logo"> VUN <span>DARA</span> </a>
       <nav id="navbar">
-        <a href="#home"> Home </a> <a href="#about"> About </a>
-        <a href="#education"> Education </a> <a href="#skills"> Skills </a>
-        <a href="#contact"> Contact </a>
+        <a href="#home" data-en="Home" data-km="ទំព័រដើម">Home</a>
+        <a href="#about" data-en="About" data-km="អំពីខ្ញុំ">About</a>
+        <a href="#education" data-en="Education" data-km="ការសិក្សា">Education</a>
+        <a href="#skills" data-en="Skills" data-km="ជំនាញ">Skills</a>
+        <a href="#contact" data-en="Contact" data-km="ទំនាក់ទំនង">Contact</a>
       </nav>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+      <div class="header-actions">
+        <!-- LANGUAGE TOGGLE -->
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language" type="button">
+          <i class="fa-solid fa-language"></i>
+          <span id="langToggleLabel">ខ្មែរ</span>
+        </button>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </header>
     <!-- ===================================================== HERO ===================================================== -->
     <section class="hero" id="home">
       <div class="hero-content">
-        <div class="available">
-          <span></span> Available for IT Opportunities
-        </div>
-        <p class="hello">Hello, I'm</p>
+       
+        <p class="hello" data-en="Hello, I'm" data-km="សួស្តី ខ្ញុំបាទឈ្មោះ">Hello, I'm</p>
         <h1>VUN <span>DARA</span></h1>
-        <h2>IT Student<span class="typing " aria-label="Software Engineering"></span></h2>
-        <p class="hero-description">
+        <h2>
+          <span data-en="IT Student" data-km="ជានិស្សិត IT">IT Student</span>
+          <span class="typing" aria-label="Software Engineering"></span>
+        </h2>
+        <p class="hero-description" data-en="I am an Information Technology student at BELTEI International University with an interest in software engineering, content creation and technology." 
+        data-km="ខ្ញុំបាទជានិស្សិតផ្នែកបច្ចេកវិទ្យាព័ត៌មានរៀននៅសាកលវិទ្យាល័យអន្តរជាតិ (BELTEI) ដែលមានចំណាប់អារម្មណ៍លើវិស្វកម្មសូហ្វវែរ ជាមួយការបង្កើតមាតិកា និងបច្ចេកវិទ្យា។">
           I am an Information Technology student at BELTEI International
           University with an interest in software engineering, content creation
           and technology.
         </p>
         <div class="hero-buttons">
           <a href="#about" class="btn primary">
-            About Me <i class="fa-solid fa-arrow-right"></i>
+            <span data-en="About Me" data-km="អំពីខ្ញុំ">About Me</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
           <a
             href="images/cv.pdf"
@@ -50,9 +68,11 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            View CV
+            <span data-en="View CV" data-km="មើលប្រវត្តិរូប">View CV</span>
           </a>
-          <a href="#contact" class="btn outline"> Contact Me </a>
+          <a href="#contact" class="btn outline">
+            <span data-en="Contact Me" data-km="ទាក់ទងខ្ញុំ">Contact Me</span>
+          </a>
         </div>
         <!-- SOCIAL MEDIA -->
         <div class="social">
@@ -83,8 +103,6 @@
           >
             <i class="fa-brands fa-telegram"></i>
           </a>
-          
-          
         </div>
       </div>
       <!-- HERO IMAGE -->
@@ -94,31 +112,32 @@
         <!-- FLOATING CARD 1 -->
         <div class="floating-card card-one">
           <i class="fa-solid fa-code"></i>
-          <div><strong>IT</strong> <small>Student</small></div>
+          <div><strong>IT</strong> <small data-en="Student" data-km="និស្សិត">Student</small></div>
         </div>
         <!-- FLOATING CARD 2 -->
         <div class="floating-card card-two">
           <i class="fa-solid fa-graduation-cap"></i>
-          <div><strong>2024</strong> <small>University</small></div>
+          <div><strong>2024</strong> <small data-en="University" data-km="សាកលវិទ្យាល័យ">University</small></div>
         </div>
       </div>
     </section>
     <!-- ===================================================== ABOUT ===================================================== -->
     <section class="section about" id="about">
       <div class="section-title">
-        <h2>About <b>Me</b></h2>
+        <h1><span data-en="About Me" data-km="អំពី ខ្ញំុ">About</span> </h1>
       </div>
       <div class="about-container">
         <div class="about-image">
-          <img src="images/photo.jpg" alt="VUN DARA" />
+          <img src="images/photo1.jpg" alt="VUN DARA" />
         </div>
         <div class="about-content">
-          <h3>Information Technology Student</h3>
-          <p>
+          <h3 data-en="Information Technology Student" data-km="និស្សិតបច្ចេកវិទ្យាព័ត៌មាន">Information Technology Student</h3>
+          <p data-en="My name is VUN DARA. I am an IT student currently studying at BELTEI International University." data-km="ខ្ញុំបាទឈ្មោះ វុន ដារ៉ា។ ខ្ញុំជានិស្សិតផ្នែក IT កំពុងសិក្សានៅសាកលវិទ្យាល័យអន្តរជាតិ (BELTEI)។">
             My name is VUN DARA. I am an IT student currently studying at BELTEI
             International University.
           </p>
-          <p>
+          <p data-en="I have interests in software engineering, content creation, mobile development and technology. I am also interested in improving my communication, technical and creative skills." 
+          data-km="ខ្ញុំមានចំណាប់អារម្មណ៍លើវិស្វកម្មសូហ្វវែរ ការបង្កើតមាតិកា ការអភិវឌ្ឍកម្មវិធីទូរស័ព្ទ និងបច្ចេកវិទ្យា។ ខ្ញុំក៏ចង់អភិវឌ្ឍលើមុខជំនាញបច្ចេកទេស និងជំនាញច្នៃប្រឌិតរបស់ខ្ញុំឲ្យរីកចម្រើនផងដែរ។">
             I have interests in software engineering, content creation, mobile
             development and technology. I am also interested in improving my
             communication, technical and creative skills.
@@ -127,23 +146,23 @@
           <div class="info-grid">
             <div class="info-box">
               <i class="fa-solid fa-user"></i>
-              <div><span>Name</span> <strong> VUN DARA </strong></div>
+              <div><span data-en="Name" data-km="ឈ្មោះ">Name</span> <strong> VUN DARA </strong></div>
             </div>
             <div class="info-box">
               <i class="fa-solid fa-briefcase"></i>
-              <div><span>Applied For</span> <strong> IT </strong></div>
+              <div><span data-en="Applied For" data-km="តួនាទីស្នើសុំ">Applied For</span> <strong data-en="IT" data-km="IT"> IT </strong></div>
             </div>
             <div class="info-box">
               <i class="fa-solid fa-location-dot"></i>
-              <div><span>Address</span> <strong> Phnom Penh, Russey Keo </strong></div>
+              <div><span data-en="Address" data-km="អាសយដ្ឋាន">Address</span> <strong data-en="Phnom Penh, Russey Keo" data-km="ភ្នំពេញ ឫស្សីកែវ"> Phnom Penh, Russey Keo </strong></div>
             </div>
             <div class="info-box">
               <i class="fa-solid fa-language"></i>
-              <div><span>English</span> <strong> Intermediate </strong></div>
+              <div><span data-en="English" data-km="ភាសាអង់គ្លេស">English</span> <strong data-en="Intermediate" data-km="មធ្យម"> Intermediate </strong></div>
             </div>
             <div class="info-box">
               <i class="fa-solid fa-language"></i>
-              <div><span>Khmer</span> <strong> Native </strong></div>
+              <div><span data-en="Khmer" data-km="ភាសាខ្មែរ">Khmer</span> <strong data-en="Native" data-km="ភាសាកំណើត"> Native </strong></div>
             </div>
           </div>
         </div>
@@ -152,8 +171,8 @@
     <!-- ===================================================== EDUCATION ===================================================== -->
     <section class="section education" id="education">
       <div class="section-title">
-        <span>MY JOURNEY</span>
-        <h2>Education</h2>
+        <span data-en="MY JOURNEY" data-km="ប្រវត្ត">MY JOURNEY</span>
+        <h3 data-en="Education" data-km="ការសិក្សារបស់ខ្ញំុ">Education</h3>
       </div>
       <div class="timeline">
         <!-- UNIVERSITY -->
@@ -162,9 +181,9 @@
             <i class="fa-solid fa-building-columns"></i>
           </div>
           <div class="timeline-content">
-            <span class="date"> 2024 – Present </span>
+            <span class="date" data-en="2024 – Present" data-km="២០២៤ – បច្ចុប្បន្ន"> 2024 – Present </span>
             <h3>BELTEI International University</h3>
-            <p>
+            <p data-en="Currently studying Information Technology (Software Engineering) at BELTEI International University." data-km="បច្ចុប្បន្នកំពុងសិក្សាផ្នែកបច្ចេកវិទ្យាព័ត៌មាន (វិស្វកម្មសូហ្វវែរ) នៅសាកលវិទ្យាល័យអន្តរជាតិ (BELTEI)។">
               Currently studying Information Technology (Software Engineering)
               at BELTEI International University.
             </p>
@@ -174,9 +193,9 @@
         <div class="timeline-item">
           <div class="timeline-dot"><i class="fa-solid fa-book"></i></div>
           <div class="timeline-content">
-            <span class="date"> 2024 – 2025 </span>
-            <h3>Certificate of Foundation Course</h3>
-            <p>
+            <span class="date" data-en="2024 – 2025" data-km="២០២៤ – ២០២៥"> 2024 – 2025 </span>
+            <h3 data-en="Certificate of Foundation Course" data-km="សញ្ញាបត្របញ្ចប់វគ្គមូលដ្ឋាន">Certificate of Foundation Course</h3>
+            <p data-en="Successfully completed Foundation Year Course in academic year 2024–2025. GPA: 3.29 / 4.0." data-km="បានបញ្ចប់វគ្គសិក្សាឆ្នាំមូលដ្ឋានដោយជោគជ័យ សម្រាប់ឆ្នាំសិក្សា ២០២៤–២០២៥។ ពិន្ទុមធ្យម (GPA): ៣.២៩ / ៤.០។">
               Successfully completed Foundation Year Course in academic year
               2024–2025. GPA: 3.29 / 4.0.
             </p>
@@ -185,11 +204,10 @@
         <div class="timeline-item">
           <div class="timeline-dot"><i class="fa-solid fa-computer"></i></div>
           <div class="timeline-content">
-            <span class="date"> 2024 – 2025 </span>
-            <h3>Computer Training Certification</h3>
-            <p>
+            <span class="date" data-en="2024 – 2025" data-km="២០២៤ – ២០២៥"> 2024 – 2025 </span>
+            <h3 data-en="Computer Training Certification" data-km="សញ្ញាបត្របណ្តុះបណ្តាលកុំព្យូទ័រ">Computer Training Certification</h3>
+            <p data-en="Successfully completed all requirements of the Computer Training Courses." data-km="បានបញ្ចប់តម្រូវការទាំងអស់នៃវគ្គបណ្តុះបណ្តាលកុំព្យូទ័រដោយជោគជ័យ។">
               Successfully completed all requirements of the Computer Training Courses.
-
             </p>
           </div>
         </div>
@@ -197,9 +215,9 @@
         <div class="timeline-item">
           <div class="timeline-dot"><i class="fa-solid fa-school"></i></div>
           <div class="timeline-content">
-            <span class="date"> 2023 – 2024 </span>
+            <span class="date" data-en="2023 – 2024" data-km="២០២៣ – ២០២៤"> 2023 – 2024 </span>
             <h3>Russey Keo High School</h3>
-            <p>Diploma of National Baccalaureate (BAC II).</p>
+            <p data-en="Diploma of National Baccalaureate (BAC II)." data-km="បានបញ្ចប់សញ្ញាបត្របាក់ឌុប (BAC II)។">Diploma of National Baccalaureate (BAC II).</p>
           </div>
         </div>
       </div>
@@ -207,14 +225,14 @@
     <!-- ===================================================== SKILLS ===================================================== -->
     <section class="section skills" id="skills">
       <div class="section-title">
-        <h2>My <b>Skills</b></h2>
+        <h2><span data-en="My" data-km="ជំនាញ">My</span> <b data-en="Skills" data-km="របស់ខ្ញុំ">Skills</b></h2>
       </div>
       <div class="skills-container">
         <!-- ================================================= SOFTWARE SKILLS ================================================== -->
         <div class="skills-card">
           <div class="skill-icon"><i class="fa-solid fa-laptop-code"></i></div>
-          <h3>Software Skills</h3>
-          <p>Software development and technical skills.</p>
+          <h3 data-en="Software Skills" data-km="ជំនាញផ្នែកសូហ្វវែរ">Software Skills</h3>
+          <p data-en="Software development and technical skills." data-km="ជំនាញអភិវឌ្ឍសូហ្វវែរ និងបច្ចេកទេស។">Software development and technical skills.</p>
           <!-- HTML & CSS -->
           <div class="skill">
             <div class="skill-info">
@@ -244,14 +262,14 @@
           <!-- Photoshop -->
           <div class="skill">
             <div class="skill-info">
-              <span> Adobe Photoshop </span> <span> 50% </span>
+              <span data-en="Adobe Photoshop" data-km="Adobe Photoshop"> Adobe Photoshop </span> <span> 50% </span>
             </div>
             <div class="bar"><span style="width: 50%"></span></div>
           </div>
           <!-- System Analysis -->
           <div class="skill">
             <div class="skill-info">
-              <span> System Analysis & UI Design </span> <span> 50% </span>
+              <span data-en="System Analysis & UI Design" data-km="វិភាគប្រព័ន្ធ និងរចនា UI"> System Analysis & UI Design </span> <span> 50% </span>
             </div>
             <div class="bar"><span style="width: 50%"></span></div>
           </div>
@@ -266,12 +284,12 @@
         <!-- ================================================= COMPUTER SKILLS ================================================== -->
         <div class="skills-card">
           <div class="skill-icon"><i class="fa-solid fa-computer"></i></div>
-          <h3>Computer Skills</h3>
-          <p>Computer and productivity skills.</p>
+          <h3 data-en="Computer Skills" data-km="ជំនាញកុំព្យូទ័រ">Computer Skills</h3>
+          <p data-en="Computer and productivity skills." data-km="ជំនាញកុំព្យូទ័រ និងផលិតភាព។">Computer and productivity skills.</p>
           <!-- WORD -->
           <div class="skill">
             <div class="skill-info">
-              <span> Microsoft Word </span> <span> 90% </span>
+              <span data-en="Microsoft Word" data-km="Microsoft Word"> Microsoft Word </span> <span> 90% </span>
             </div>
             <div class="bar"><span style="width: 90%"></span></div>
           </div>
@@ -285,14 +303,14 @@
           <!-- EXCEL -->
           <div class="skill">
             <div class="skill-info">
-              <span> Microsoft Excel </span> <span> 85% </span>
+              <span data-en="Microsoft Excel" data-km="Microsoft Excel"> Microsoft Excel </span> <span> 85% </span>
             </div>
             <div class="bar"><span style="width: 85%"></span></div>
           </div>
           <!-- INTERNET -->
           <div class="skill">
             <div class="skill-info">
-              <span> Internet & E-mail </span> <span> 90% </span>
+              <span data-en="Internet & E-mail" data-km="អ៊ីនធឺណិត និងអ៊ីមែល"> Internet & E-mail </span> <span> 90% </span>
             </div>
             <div class="bar"><span style="width: 90%"></span></div>
           </div>
@@ -300,16 +318,16 @@
         <!-- ================================================= KEY SKILLS ================================================== -->
         <div class="skills-card">
           <div class="skill-icon"><i class="fa-solid fa-lightbulb"></i></div>
-          <h3>Key Skills</h3>
-          <p>Personal and professional skills.</p>
+          <h3 data-en="Key Skills" data-km="ជំនាញសំខាន់ៗ">Key Skills</h3>
+          <p data-en="Personal and professional skills." data-km="ជំនាញផ្ទាល់ខ្លួន និងវិជ្ជាជីវៈ។">Personal and professional skills.</p>
           <div class="tag-list">
-            <span> <i class="fa-solid fa-comments"></i> Communication </span>
-            <span> <i class="fa-solid fa-pen-nib"></i> Content Creation </span>
-            <span> <i class="fa-solid fa-code"></i> Software Engineering </span>
-            <span> <i class="fa-solid fa-shop"></i> Sales Outdoor </span>
-            <span> <i class="fa-solid fa-heart"></i> Friendly </span>
-            <span> <i class="fa-solid fa-clock"></i> Patient </span>
-            <span> <i class="fa-solid fa-check"></i> Responsible </span>
+            <span> <i class="fa-solid fa-comments"></i> <span data-en="Communication" data-km="ការទំនាក់ទំនង">Communication</span> </span>
+            <span> <i class="fa-solid fa-pen-nib"></i> <span data-en="Content Creation" data-km="ការបង្កើតមាតិកា">Content Creation</span> </span>
+            <span> <i class="fa-solid fa-code"></i> <span data-en="Software Engineering" data-km="វិស្វកម្មសូហ្វវែរ">Software Engineering</span> </span>
+            <span> <i class="fa-solid fa-shop"></i> <span data-en="Sales Outdoor" data-km="លក់ដូរខាងក្រៅ">Sales Outdoor</span> </span>
+            <span> <i class="fa-solid fa-heart"></i> <span data-en="Friendly" data-km="រួសរាយរាក់ទាក់">Friendly</span> </span>
+            <span> <i class="fa-solid fa-clock"></i> <span data-en="Patient" data-km="អត់ធ្មត់">Patient</span> </span>
+            <span> <i class="fa-solid fa-check"></i> <span data-en="Responsible" data-km="ទទួលខុសត្រូវ">Responsible</span> </span>
           </div>
         </div>
       </div>
@@ -317,22 +335,22 @@
     <!-- ===================================================== LANGUAGES ===================================================== -->
     <section class="section languages">
       <div class="section-title">
-        <span>LANGUAGE</span>
-        <h2>Languages</h2>
+        <span data-en="LANGUAGE" data-km="ភាសា">LANGUAGE</span>
+        <h2 data-en="Languages" data-km="ភាសា">Languages</h2>
       </div>
       <div class="language-container">
         <!-- KHMER -->
         <div class="language-card">
           <div class="language-icon">🇰🇭</div>
-          <h3>Khmer</h3>
-          <p>Native</p>
+          <h3 data-en="Khmer" data-km="ខ្មែរ">Khmer</h3>
+          <p data-en="Native" data-km="ភាសាកំណើត">Native</p>
           <div class="language-bar"><span style="width: 100%"></span></div>
         </div>
         <!-- ENGLISH -->
         <div class="language-card">
           <div class="language-icon">🇬🇧</div>
-          <h3>English</h3>
-          <p>Intermediate</p>
+          <h3 data-en="English" data-km="អង់គ្លេស">English</h3>
+          <p data-en="Intermediate" data-km="មធ្យម">Intermediate</p>
           <div class="language-bar"><span style="width: 65%"></span></div>
         </div>
       </div>
@@ -340,27 +358,30 @@
     <!-- ===================================================== CONTACT ===================================================== -->
     <section class="section contact" id="contact">
       <div class="section-title">
-        <span>GET IN TOUCH</span>
-        <h2>Contact <b>Me</b></h2>
+        <h2><span data-en="Contact" data-km="ទំនាក់ទំនង">Contact</span> <b data-en="Me" data-km="ខ្ញុំ">Me</b></h2>
       </div>
       <div class="contact-container">
         <div class="contact-info">
-          <h3>Let's work together</h3>
-          <p>
+          <h3 data-en="Let's work together" data-km="តោះធ្វើការជាមួយគ្នា">Let's work together</h3>
+          <p data-en="If you would like to contact me regarding IT opportunities, internship opportunities, collaboration or other professional matters, feel free to contact me." data-km="ប្រសិនបើអ្នកចង់ទាក់ទងខ្ញុំទាក់ទងនឹងឱកាសការងារផ្នែក IT ការហាត់ការ កិច្ចសហការ ឬកិច្ចការវិជ្ជាជីវៈផ្សេងទៀត សូមកុំស្ទាក់ស្ទើរទាក់ទងខ្ញុំ។">
             If you would like to contact me regarding IT opportunities,
             internship opportunities, collaboration or other professional
             matters, feel free to contact me.
           </p>
+          <div class="about-image ">
+          <img src="images/photo.jpg" alt="VUN DARA" />
+        </div>
           <!-- PHONE -->
           <div class="contact-item">
+            
             <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-            <div><span> Phone </span> <strong> 010 856 409 </strong></div>
+            <div><span data-en="Phone" data-km="លេខទូរស័ព្ទ">Phone</span> <strong> 010 856 409 </strong></div>
           </div>
           <!-- EMAIL -->
           <div class="contact-item">
             <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
             <div>
-              <span> Email </span>
+              <span data-en="Email" data-km="អ៊ីមែល">Email</span>
               <strong>
                 vundara4@gmail.com <br />
                 vundara.biu@gmail.com
@@ -373,7 +394,7 @@
               <i class="fa-solid fa-location-dot"></i>
             </div>
             <div>
-              <span> Location </span> <strong> Phnom Penh, Cambodia </strong>
+              <span data-en="Location" data-km="ទីតាំង">Location</span> <strong data-en="Phnom Penh, Cambodia" data-km="ភ្នំពេញ កម្ពុជា"> Phnom Penh, Cambodia </strong>
             </div>
           </div>
         </div>
@@ -382,7 +403,7 @@
     <!-- ===================================================== FOOTER ===================================================== -->
     <footer>
       <div class="footer-logo">VUN <span>DARA</span></div>
-      <p>© 2026 VUN DARA. All Rights Reserved.</p>
+      <p>© 2026 VUN DARA. <span data-en="All Rights Reserved." data-km="រក្សាសិទ្ធិគ្រប់យ៉ាង។">All Rights Reserved.</span></p>
       <a href="#home" class="back-top">
         <i class="fa-solid fa-arrow-up"></i>
       </a>
@@ -435,6 +456,29 @@
           }
         });
       });
+
+      // ============== LANGUAGE TOGGLE ==============
+      const langToggle = document.getElementById('langToggle');
+      const langToggleLabel = document.getElementById('langToggleLabel');
+      const htmlRoot = document.getElementById('htmlRoot');
+      let currentLang = 'en'; // default language, not persisted across page loads
+
+      function applyLanguage(lang) {
+        document.querySelectorAll('[data-en][data-km]').forEach(function (el) {
+          el.textContent = lang === 'km' ? el.getAttribute('data-km') : el.getAttribute('data-en');
+        });
+        htmlRoot.setAttribute('lang', lang);
+        // Button shows the language you'd switch TO
+        langToggleLabel.textContent = lang === 'km' ? 'English' : 'ខ្មែរ';
+        currentLang = lang;
+      }
+
+      langToggle.addEventListener('click', function () {
+        applyLanguage(currentLang === 'en' ? 'km' : 'en');
+      });
+
+      // Set initial state explicitly (English)
+      applyLanguage('en');
 
       // ============== TYPING ANIMATION ==============
       const typingElement = document.querySelector('.typing') ;

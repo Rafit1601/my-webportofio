@@ -30,7 +30,7 @@
     padding: 0;
     box-sizing: border-box;
 
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Siemreap', sans-serif;
 
     scroll-behavior: smooth;
 }
@@ -177,7 +177,7 @@ header {
 
     text-decoration: none;
 
-    font-size: 28px;
+    font-size: 30px;
 
     font-weight: 800;
 
@@ -270,6 +270,83 @@ nav a.active::after {
 
 
 /* =========================================================
+   HEADER ACTIONS (language toggle + menu)
+========================================================= */
+
+.header-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   LANGUAGE TOGGLE
+========================================================= */
+
+.lang-toggle {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50px;
+
+    background: rgba(255,255,255,.05);
+
+    color: var(--primary);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: .3px;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+
+.lang-toggle i {
+
+    font-size: 14px;
+}
+
+
+.lang-toggle:hover,
+.lang-toggle:focus-visible {
+
+    color: #06131f;
+
+    background: var(--primary);
+
+    border-color: var(--primary);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(0,171,240,.35);
+
+    outline: none;
+}
+
+
+.lang-toggle:active {
+
+    transform: translateY(-1px) scale(.97);
+}
+
+
+/* =========================================================
    MENU
 ========================================================= */
 
@@ -301,7 +378,7 @@ nav a.active::after {
 
 .hero {
 
-    min-height: 100vh;
+    min-height: 90vh;
 
     padding:
         140px 9%
@@ -437,7 +514,7 @@ nav a.active::after {
             90deg,
             white,  
             #00abf0,
-            #c7ee03
+            #ee0303
         );
 
     background-size: 200%;
@@ -721,8 +798,8 @@ nav a.active::after {
 
     position: absolute;
 
-    width: 360px;
-    height: 300px;
+    width: 350px;
+    height: 380px;
 
     border-radius: 50%;
 
@@ -754,8 +831,8 @@ nav a.active::after {
 
     position: relative;
 
-    width: 340px;
-    height: 380px;
+    width: 380px;
+    height: 440px;
 
     object-fit: cover;
 
@@ -947,7 +1024,7 @@ nav a.active::after {
 
     width: 100%;
 
-    max-width: 380px;
+    max-width: 300px;
 
     border-radius: 25px;
 
@@ -2255,6 +2332,23 @@ footer p {
 
         grid-template-columns:
             1fr;
+    }
+
+    .header-actions {
+
+        gap: 10px;
+    }
+
+    .lang-toggle {
+
+        padding: 8px 12px;
+
+        font-size: 11px;
+    }
+
+    .lang-toggle span {
+
+        display: none;
     }
 }
 
