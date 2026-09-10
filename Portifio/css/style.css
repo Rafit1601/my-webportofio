@@ -122,9 +122,7 @@
         );
 
     background-size: 200%;
-
     -webkit-background-clip: text;
-
     -webkit-text-fill-color: transparent;
 }
 
@@ -166,7 +164,7 @@
 
 [data-theme="light"] nav.show {
 
-    background: rgba(244,248,251,.97);
+    background: rgba(251, 246, 244, 0.97);
 }
 
 
@@ -822,34 +820,20 @@ nav a.active::after {
 .btn {
 
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
-
     gap: 10px;
-
-    padding:
-        14px 27px;
-
+    padding:14px 27px;
     border-radius: 50px;
-
     text-decoration: none;
-
     font-size: 14px;
-
     font-weight: 600;
-
     transition: var(--transition);
-
     cursor: pointer;
 }
 
-
 .primary {
-
     color: #06131f;
-
     background:
         linear-gradient(
             135deg,
@@ -1024,176 +1008,98 @@ nav a.active::after {
 
     }
 }
-
-
 .hero-image > img {
-
     position: relative;
-
     width: 340px;
     height: 380px;
-
     object-fit: cover;
-
     border-radius: 50%;
-
     padding: 7px;
-
-    border:
-        4px solid var(--primary);
-
-    box-shadow:
-        0 0 30px rgba(0,171,240,.5),
-        0 0 90px rgba(0,171,240,.2);
-
-    animation:
-        floating 5s ease-in-out infinite;
+    border:4px solid var(--primary);
+    box-shadow:0 0 30px rgba(0,171,240,.5),0 0 90px rgba(0,171,240,.2);
+    animation:floating 5s ease-in-out infinite;
 }
-
-
 @keyframes floating {
-
     50% {
         transform:
             translateY(-20px);
     }
 }
 
-
 /* =========================================================
    FLOATING CARDS
 ========================================================= */
 
 .floating-card {
-
     position: absolute;
-
     display: flex;
-
     align-items: center;
-
     gap: 10px;
-
-    padding:
-        12px 16px;
-
-    border:
-        1px solid var(--border);
-
+    padding:12px 16px;
+    border:1px solid var(--border);
     border-radius: 15px;
-
-    background:
-        rgba(255,255,255,.08);
-
-    backdrop-filter:
-        blur(15px);
-
-    box-shadow:
-        var(--shadow);
-
-    animation:
-        floatingCard 4s ease-in-out infinite;
+    background: rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    box-shadow:var(--shadow);
+    animation: floatingCard 4s ease-in-out infinite;
 }
 
-
 .floating-card i {
-
-    color:
-        var(--primary);
-
+    color:var(--primary);
     font-size: 20px;
 }
 
-
 .floating-card strong {
-
     display: block;
-
     font-size: 13px;
 }
 
-
 .floating-card small {
-
-    color:
-        var(--muted);
-
+    color:var(--muted);
     font-size: 10px;
 }
 
-
 .card-one {
-
     top: 15%;
-
     left: 5%;
 }
 
-
 .card-two {
-
     right: 2%;
-
     bottom: 18%;
-
-    animation-delay:
-        1s;
+    animation-delay:1s;
 }
-
 
 @keyframes floatingCard {
-
-    50% {
-
-        transform:
-            translateY(-12px);
-
+    50% {transform:   translateY(-12px);
     }
 }
-
 
 /* =========================================================
    SECTIONS
 ========================================================= */
 
 .section {
-
-    padding:
-        110px 9%;
+    padding:110px 9%;
 }
 
-
 .section-title {
-
     text-align: center;
-
     margin-bottom: 60px;
 }
 
-
 .section-title span {
-
-    color:
-        var(--primary);
-
+   color: var(--primary);
     font-size: 12px;
-
     font-weight: 600;
-
     letter-spacing: 3px;
 }
 
-
 .section-title h2 {
-
-    font-size:
-        clamp(34px,5vw,48px);
-
+    font-size: clamp(34px,5vw,48px);
     margin-top: 8px;
-
     font-weight: 800;
 }
-
 
 .section-title h2 b {
 
@@ -1207,14 +1113,9 @@ nav a.active::after {
 ========================================================= */
 
 .about-container {
-
     display: grid;
-
-    grid-template-columns:
-        .8fr 1.2fr;
-
+    grid-template-columns: .8fr 1.2fr;
     gap: 70px;
-
     align-items: center;
 }
 
@@ -1222,50 +1123,27 @@ nav a.active::after {
 .about-image img {
 
     width: 100%;
-
     max-width: 380px;
-
     border-radius: 25px;
-
-    border:
-        1px solid var(--border);
-
-    box-shadow:
-        var(--shadow);
-
-    transition:
-        var(--transition);
+    border:1px solid var(--border);
+    box-shadow:   var(--shadow);
+    transition: var(--transition);
 }
-
 
 .about-image img:hover {
-
-    transform:
-        translateY(-10px)
-        rotate(-2deg);
-
-    box-shadow:
-        0 30px 70px rgba(0,171,240,.15);
+    transform: translateY(-10px) rotate(-2deg);
+    box-shadow:  0 30px 70px rgba(0,171,240,.15);
 }
 
-
 .about-content h3 {
-
     font-size: 28px;
-
     margin-bottom: 20px;
 }
 
-
 .about-content p {
-
-    color:
-        var(--muted);
-
+    color: var(--muted);
     line-height: 1.9;
-
     font-size: 14px;
-
     margin-bottom: 15px;
 }
 
@@ -1639,6 +1517,42 @@ nav a.active::after {
 
     animation:
         grow 2s ease;
+}
+
+
+.skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.skill-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 54px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
+    transition: var(--transition);
+}
+
+.skill-pill i {
+    color: var(--primary);
+    font-size: 18px;
+}
+
+.skill-pill:hover {
+    transform: translateY(-3px);
+    border-color: rgba(0, 171, 240, 0.6);
+    background: rgba(0, 171, 240, 0.08);
 }
 
 
