@@ -1044,6 +1044,56 @@ nav a.active::after {
     padding:110px 9%;
 }
 
+.education-image {
+    width: min(1200px, calc(100% - 48px));
+    margin: 0 auto 80px;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    background: linear-gradient(145deg, var(--card), rgba(0, 171, 240, .04));
+    box-shadow: var(--shadow);
+}
+
+.education-image img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.education-image img:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .28);
+}
+
+@media (max-width: 750px) {
+    .education-image {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        padding: 12px;
+        border-radius: 22px;
+    }
+
+    .education-image img {
+        border-radius: 16px;
+    }
+}
+
+@media (max-width: 500px) {
+    .education-image {
+        grid-template-columns: 1fr;
+        width: calc(100% - 36px);
+        margin-bottom: 56px;
+    }
+}
+
 .section-title {
     text-align: center;
     margin-bottom: 60px;
